@@ -8,8 +8,8 @@ public void setup()
 public void draw()
 {
   background(h,100,255);
-  square(300,300,275);
-  if(h>=255)
+  squareFractal(300,300,275);
+  if(h>=265)
     h=0;
   else
     h++;
@@ -17,17 +17,17 @@ public void draw()
 }
 
 
-public void square(int x, int y, int len)
+public void squareFractal(int x, int y, int len)
  {
   a=(h-(10*x/y))%256;
   strokeWeight(2);
   fill(a,255,255);
   rect(x,y,len,len,50);
   if(len > 20){
-    square(x+len/2, y-len/2, len/2);
-    square(x-len/2, y-len/2, len/2);
-    square(x+len/2, y+len/2, len/2);
-    square(x-len/2, y+len/2, len/2);
-    square(x-len/2, y+len/2, len/2);
+    squareFractal(x+len/2, y-len/2, len/2);
+    squareFractal(x-len/2, y-len/2, len/2);
+    squareFractal(x+len/2, y+len/2, len/2);
+    squareFractal(x-len/2, y+len/2, len/2);
+    squareFractal(x-len/2, y+len/2, len/2);
   }
 }
