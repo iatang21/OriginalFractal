@@ -7,6 +7,7 @@ public void setup()
 }
 public void draw()
 {
+  colorMode(HSB);
   background(h,100,255);
   squareFractal(300,300,275);
   if(h>=265)
@@ -22,7 +23,7 @@ public void squareFractal(int x, int y, int len)
   a=(h-(10*x/y))%256;
   strokeWeight(2);
   fill(a,255,255);
-  rect(x,y,len,len,50);
+  rect(x,y,len,len,5);
   if(len > 20){
     squareFractal(x+len/2, y-len/2, len/2);
     squareFractal(x-len/2, y-len/2, len/2);
