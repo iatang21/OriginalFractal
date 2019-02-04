@@ -1,11 +1,9 @@
 float h,a;
 public void setup()
 {
-  h=0;
-  a=0;
   size (600,600);
   rectMode(CENTER);
-  colorMode(HSB);
+  //colorMode(HSB);
 }
 public void draw()
 {
