@@ -7,7 +7,8 @@ public void setup()
   size(900,900);
   rectMode(CENTER);
   increasing=true;
-  n=15;
+  n=5;
+  h=-20;
   //colorMode(HSB);
 }
 public void draw()
@@ -24,11 +25,11 @@ public void draw()
     h+=1;
   else
     h-=1;
-  if(h==256)
+  if(h==300)
     increasing=false;
-  else if(h==-15){
+  else if(h==-10){
     increasing=true;
-    n=15;  
+    n=5;  
   }
 }
 
@@ -37,15 +38,21 @@ public void squareFractal(int x, int y, int len)
  {
   //a=(h-(10*x/y))%256;
   strokeWeight(2);
-  stroke(0,0,0,150);
-  fill(x/3,y/3,x*y,h);
-  //fill(a,255,255);
+ stroke(2*x/5,2*y/5,x*y,h);
+  //stroke(0,0,0,150);
+  noFill();
+  //fill(x/3,y/3,x*y,h);
+  //stroke(a,255,255);
   rect(x,y,len,len,5);
   if(len > 20){
-    squareFractal(x+len/2, y-len/2, len/2);
-    squareFractal(x-len/2, y-len/2, len/2);
-    squareFractal(x+len/2, y+len/2, len/2);
-    squareFractal(x-len/2, y+len/2, len/2);
-    squareFractal(x-len/2, y+len/2, len/2);
+    squareFractal(x, y-len/2, len/2);
+    squareFractal(x-len/2, y, len/2);
+    squareFractal(x, y+len/2, len/2);
+    //squareFractal(x-len/2, y+len/2, len/2);
+    squareFractal(x+len/2, y, len/2);
+    /*squareFractal(x-len/2,y-len/2,len/2);
+    squareFractal(x+len/2,y-len/2,len/2);
+    squareFractal(x-len/2,y+len/2,len/2);
+    squareFractal(x+len/2,y+len/2,len/2);*/
   }
 }
