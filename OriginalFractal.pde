@@ -3,7 +3,8 @@ boolean increasing;
 public void setup()
 {
   smooth();
-  size(900,900);
+  size(700,700);
+  frameRate(200);
   rectMode(CENTER);
   increasing=true;
   h=-10;
@@ -11,7 +12,7 @@ public void setup()
 public void draw()
 {
   background(0);
-  squareFractal(450,450,40);
+  squareFractal(350,350,11);
   if(increasing)
     h+=1;
   else
@@ -30,7 +31,7 @@ public void squareFractal(int x, int y, int len)
   stroke(3*x/8,3*y/8,x*y,h);
   noFill();
   rect(x,y,len,len,5);
-  if(len < 450){
+  if(len < 320){
     squareFractal(x, y-len/2, len*2);
     squareFractal(x-len/2, y, len*2);
     squareFractal(x, y+len/2, len*2);
