@@ -26,7 +26,7 @@ public void draw()
     h+=1;
   else
     h-=1;
-  if(h==300)
+  if(h==100)
     increasing=false;
   else if(h==-10){
     increasing=true; 
